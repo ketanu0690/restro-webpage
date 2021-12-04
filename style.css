@@ -672,6 +672,11 @@ padding: 2rem;
         display: inline-block;
     }
 
+header{
+    width: 54rem;
+    overflow:hidden
+}
+
     header .navbar{
         position: absolute;
         top: 100%; left: 0; right: 0;
