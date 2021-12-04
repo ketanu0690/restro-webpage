@@ -1,31 +1,33 @@
-let menu = document.querySelector('#menu-bars');
-let navbar = document.querySelector('.navbar');
+// let menu = document.querySelector('#menu-bars');
+// let navbar = document.querySelector('.navbar');
 
-menu.onclick = () => {
-  menu.classList.toggle('fa-times');
-  navbar.classList.toggle('active');
-}
+// menu.onclick = () => {
+//   menu.classList.toggle('fa-times');
+//   console.log("heloe");
+//   navbar.classList.toggle('active');
+// }
 
 
 let section = document.querySelectorAll('section');
 let navLinks = document.querySelectorAll('header .navbar a');
 
-window.onscroll = () =>{
+window.onscroll = () => {
 
   menu.classList.remove('fa-times');
   navbar.classList.remove('active');
 
-  section.forEach(sec =>{
+
+section.forEach(sec => {
 
     let top = window.scrollY;
     let height = sec.offsetHeight;
     let offset = sec.offsetTop - 150;
     let id = sec.getAttribute('id');
 
-    if(top >= offset && top <= offset + height){
-      navLinks.forEach(links =>{
+    if (top >= offset && top <= offset + height) {
+      navLinks.forEach(links => {
         links.classList.remove('active');
-        document.querySelector('header .navbar a[href*='+id+']').classList.add('active');
+        document.querySelector('header .navbar a[href*=' + id + ']').classList.add('active');
       });
     };
   });
@@ -97,14 +99,19 @@ window.onload = fadeOut;
 
 
 
-var dark =document.getElementById('dark');
-dark.onclick = function(x){
+var dark = document.getElementById('dark');
+dark.onclick = function (x) {
   document.body.classList.toggle("dark-theme");
-  
+
 }
 
-function myfun(x){
-  
-  x.classList.toggle("fas-fa-sun-o");
+function myFunction() {
+  var x = document.querySelector("navbar");
+  console.log(x);
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
 }
 
